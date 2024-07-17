@@ -3,19 +3,19 @@ import pathlib
 
 import streamlit as st
 
-from streamlit_pydantic.ui_renderer import _name_to_title
+from st_pydantic.ui_renderer import _name_to_title
 
 st.set_page_config(page_title="Streamlit Pydantic Playground", page_icon=":magic_wand:")
 st.title("Streamlit Pydantic - Playground")
 
 BADGES = """
-<a href="https://gitHub.com/lukasmasuch/streamlit-pydantic" title="Star Repo" target="_blank"><img src="https://img.shields.io/github/stars/lukasmasuch/streamlit-pydantic.svg?logo=github&style=social"></a>
+<a href="https://gitHub.com/lukasmasuch/st-pydantic" title="Star Repo" target="_blank"><img src="https://img.shields.io/github/stars/lukasmasuch/st-pydantic.svg?logo=github&style=social"></a>
 <a href="https://twitter.com/lukasmasuch" title="Follow on Twitter" target="_blank"><img src="https://img.shields.io/twitter/follow/lukasmasuch.svg?style=social&label=Follow"></a>
 """
 st.markdown(BADGES, unsafe_allow_html=True)
 
 st.markdown(
-    "Streamlit-pydantic makes it easy to auto-generate UI elements from Pydantic models. Just define your data model and turn it into a full-fledged UI form. "
+    "st-pydantic makes it easy to auto-generate UI elements from Pydantic models. Just define your data model and turn it into a full-fledged UI form. "
     + " You can explore some examples below 👇"
 )
 

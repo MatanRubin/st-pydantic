@@ -4,7 +4,7 @@ from typing import Set
 import streamlit as st
 from pydantic import BaseModel, Field, ValidationError, parse_obj_as
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class OtherData(BaseModel):

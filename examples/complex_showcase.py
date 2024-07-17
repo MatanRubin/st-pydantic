@@ -5,8 +5,8 @@ from typing import Dict, List, Literal, Optional, Set
 import streamlit as st
 from pydantic import BaseModel, Field, SecretStr
 
-import streamlit_pydantic as sp
-from streamlit_pydantic.types import FileContent
+import st_pydantic as sp
+from st_pydantic.types import FileContent
 
 
 class SelectionValue(str, Enum):

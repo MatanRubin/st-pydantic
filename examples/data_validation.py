@@ -2,7 +2,7 @@ import streamlit as st
 from pydantic import BaseModel, Field, HttpUrl
 from pydantic.color import Color
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class ExampleModel(BaseModel):

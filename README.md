@@ -9,9 +9,9 @@
 
 
 <p align="center">
-    <a href="https://pypi.org/project/streamlit-pydantic/" title="PyPi Version"><img src="https://img.shields.io/pypi/v/streamlit-pydantic?color=green&style=flat"></a>
-    <a href="https://pypi.org/project/streamlit-pydantic/" title="Python Version"><img src="https://img.shields.io/badge/Python-3.7%2B-blue&style=flat"></a>
-    <a href="https://github.com/lukasmasuch/streamlit-pydantic/blob/main/LICENSE" title="Project License"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
+    <a href="https://pypi.org/project/st-pydantic/" title="PyPi Version"><img src="https://img.shields.io/pypi/v/st-pydantic?color=green&style=flat"></a>
+    <a href="https://pypi.org/project/st-pydantic/" title="Python Version"><img src="https://img.shields.io/badge/Python-3.7%2B-blue&style=flat"></a>
+    <a href="https://github.com/lukasmasuch/st-pydantic/blob/main/LICENSE" title="Project License"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
     <a href="https://twitter.com/lukasmasuch" title="Follow on Twitter"><img src="https://img.shields.io/twitter/follow/lukasmasuch.svg?style=social&label=Follow"></a>
 </p>
 
@@ -19,29 +19,29 @@
   <a href="#getting-started">Getting Started</a> •
   <a href="#documentation">Documentation</a> •
   <a href="#support--feedback">Support</a> •
-  <a href="https://github.com/lukasmasuch/streamlit-pydantic/issues/new?labels=bug&template=01_bug-report.md">Report a Bug</a> •
+  <a href="https://github.com/lukasmasuch/st-pydantic/issues/new?labels=bug&template=01_bug-report.md">Report a Bug</a> •
   <a href="#contribution">Contribution</a> •
-  <a href="https://github.com/lukasmasuch/streamlit-pydantic/releases">Changelog</a>
+  <a href="https://github.com/lukasmasuch/st-pydantic/releases">Changelog</a>
 </p>
 
-st-pydantic is a fork of the fantastic [Streamlit-pydantic](https://github.com/LukasMasuch/streamlit-pydantic) package, 
+st-pydantic is a fork of the fantastic [st-pydantic](https://github.com/LukasMasuch/st-pydantic) package, 
 which is no longer maintained by the original author, @LukasMasuch.
 I tried reaching out to the original maintainer, but I did not get a response, so I created this fork.
 I intend on maintaining it and adding new features as needed.
 
 The original README is below.
 
-Streamlit-pydantic makes it easy to auto-generate UI elements from [Pydantic](https://github.com/samuelcolvin/pydantic/) models or [dataclasses](https://docs.python.org/3/library/dataclasses.html). Just define your data model and turn it into a full-fledged UI form. It supports data validation, nested models, and field limitations. Streamlit-pydantic can be easily integrated into any Streamlit app.
+st-pydantic makes it easy to auto-generate UI elements from [Pydantic](https://github.com/samuelcolvin/pydantic/) models or [dataclasses](https://docs.python.org/3/library/dataclasses.html). Just define your data model and turn it into a full-fledged UI form. It supports data validation, nested models, and field limitations. st-pydantic can be easily integrated into any Streamlit app.
 
 <sup>Beta Version: Only suggested for experimental usage.</sup>
 
 
-<img style="width: 100%" src="https://raw.githubusercontent.com/lukasmasuch/streamlit-pydantic/main/docs/images/banner.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/lukasmasuch/st-pydantic/main/docs/images/banner.png"/>
 
 ---
 
 <p align="center">
-     Try out and explore various examples in our playground <a href="https://share.streamlit.io/lukasmasuch/streamlit-pydantic/main/playground/playground_app.py">here</a>.
+     Try out and explore various examples in our playground <a href="https://share.streamlit.io/lukasmasuch/st-pydantic/main/playground/playground_app.py">here</a>.
 </p>
 
 ---
@@ -61,7 +61,7 @@ Streamlit-pydantic makes it easy to auto-generate UI elements from [Pydantic](ht
 > _Requirements: Python 3.6+._
 
 ```bash
-pip install streamlit-pydantic
+pip install st-pydantic
 ```
 
 ### Usage
@@ -71,7 +71,7 @@ pip install streamlit-pydantic
     ```python
     import streamlit as st
     from pydantic import BaseModel
-    import streamlit_pydantic as sp
+    import st_pydantic as sp
 
     class ExampleModel(BaseModel):
         some_text: str
@@ -92,12 +92,12 @@ pip install streamlit-pydantic
 ---
 
 <p align="center">
-     👉&nbsp; Try out and explore these examples in our playground <a href="https://share.streamlit.io/lukasmasuch/streamlit-pydantic/main/playground/playground_app.py">here</a>
+     👉&nbsp; Try out and explore these examples in our playground <a href="https://share.streamlit.io/lukasmasuch/st-pydantic/main/playground/playground_app.py">here</a>
 </p>
 
 ---
 
-The following collection of examples demonstrate how Streamlit Pydantic can be applied in more advanced scenarios. You can find additional - even more advanced - examples in the [examples folder](./examples) or in the [playground](https://share.streamlit.io/lukasmasuch/streamlit-pydantic/main/playground/playground_app.py). 
+The following collection of examples demonstrate how Streamlit Pydantic can be applied in more advanced scenarios. You can find additional - even more advanced - examples in the [examples folder](./examples) or in the [playground](https://share.streamlit.io/lukasmasuch/st-pydantic/main/playground/playground_app.py). 
 
 ### Simple Form
 
@@ -105,13 +105,14 @@ The following collection of examples demonstrate how Streamlit Pydantic can be a
 import streamlit as st
 from pydantic import BaseModel
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class ExampleModel(BaseModel):
     some_text: str
     some_number: int
     some_boolean: bool
+
 
 data = sp.pydantic_form(key="my_form", model=ExampleModel)
 if data:
@@ -125,7 +126,7 @@ import streamlit as st
 from pydantic import BaseModel, Field, HttpUrl
 from pydantic.color import Color
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class ExampleModel(BaseModel):
@@ -148,7 +149,7 @@ import json
 import streamlit as st
 from pydantic.json import pydantic_encoder
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 @dataclasses.dataclass
@@ -172,7 +173,7 @@ from typing import Set
 import streamlit as st
 from pydantic import BaseModel, Field, ValidationError, parse_obj_as
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class OtherData(BaseModel):
@@ -216,7 +217,7 @@ if data:
 ```python
 from pydantic import BaseModel
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class ExampleModel(BaseModel):
@@ -235,7 +236,7 @@ import datetime
 
 from pydantic import BaseModel, Field
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class ExampleModel(BaseModel):
@@ -254,7 +255,7 @@ sp.pydantic_output(instance)
 import streamlit as st
 from pydantic import BaseModel
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class ExampleModel(BaseModel):
@@ -272,20 +273,20 @@ with st.form(key="pydantic_form"):
 
 | Type                     | Channel                                              |
 | ------------------------ | ------------------------------------------------------ |
-| 🚨&nbsp; **Bug Reports**       | <a href="https://github.com/lukasmasuch/streamlit-pydantic/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Abug+sort%3Areactions-%2B1-desc+" title="Open Bug Report"><img src="https://img.shields.io/github/issues/lukasmasuch/streamlit-pydantic/bug.svg?label=bug"></a>                                 |
-| 🎁&nbsp; **Feature Requests**  | <a href="https://github.com/lukasmasuch/streamlit-pydantic/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+sort%3Areactions-%2B1-desc" title="Open Feature Request"><img src="https://img.shields.io/github/issues/lukasmasuch/streamlit-pydantic/feature.svg?label=feature%20request"></a>                                 |
-| 👩‍💻&nbsp; **Usage Questions**   |  <a href="https://github.com/lukasmasuch/streamlit-pydantic/issues?q=is%3Aopen+is%3Aissue+label%3Asupport+sort%3Areactions-%2B1-desc" title="Open Support Request"> <img src="https://img.shields.io/github/issues/lukasmasuch/streamlit-pydantic/support.svg?label=support%20request"></a> |
+| 🚨&nbsp; **Bug Reports**       | <a href="https://github.com/lukasmasuch/st-pydantic/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Abug+sort%3Areactions-%2B1-desc+" title="Open Bug Report"><img src="https://img.shields.io/github/issues/lukasmasuch/st-pydantic/bug.svg?label=bug"></a>                                 |
+| 🎁&nbsp; **Feature Requests**  | <a href="https://github.com/lukasmasuch/st-pydantic/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+sort%3Areactions-%2B1-desc" title="Open Feature Request"><img src="https://img.shields.io/github/issues/lukasmasuch/st-pydantic/feature.svg?label=feature%20request"></a>                                 |
+| 👩‍💻&nbsp; **Usage Questions**   |  <a href="https://github.com/lukasmasuch/st-pydantic/issues?q=is%3Aopen+is%3Aissue+label%3Asupport+sort%3Areactions-%2B1-desc" title="Open Support Request"> <img src="https://img.shields.io/github/issues/lukasmasuch/st-pydantic/support.svg?label=support%20request"></a> |
 | 📢&nbsp; **Announcements**  | <a href="https://twitter.com/lukasmasuch" title="Follow me on Twitter"><img src="https://img.shields.io/twitter/follow/lukasmasuch.svg?style=social&label=Follow"> |
 
 ## Documentation
 
-The API documentation can be found [here](./docs). To generate UI elements, you can use the high-level [`pydantic_form`](./docs/streamlit_pydantic.ui_renderer.md#function-pydantic_form) method. Or the more flexible lower-level [`pydantic_input`](./docs/streamlit_pydantic.ui_renderer.md#function-pydantic_input) and [`pydantic_output`](./docs/streamlit_pydantic.ui_renderer.md#function-pydantic_output) methods. See the [examples](#examples) section on how to use those methods.
+The API documentation can be found [here](./docs). To generate UI elements, you can use the high-level [`pydantic_form`](./docs/st_pydantic.ui_renderer.md#function-pydantic_form) method. Or the more flexible lower-level [`pydantic_input`](./docs/st_pydantic.ui_renderer.md#function-pydantic_input) and [`pydantic_output`](./docs/st_pydantic.ui_renderer.md#function-pydantic_output) methods. See the [examples](#examples) section on how to use those methods.
 
 ## Contribution
 
-- Pull requests are encouraged and always welcome. Read our [contribution guidelines](https://github.com/lukasmasuch/streamlit-pydantic/tree/main/CONTRIBUTING.md) and check out [help-wanted](https://github.com/lukasmasuch/streamlit-pydantic/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A"help+wanted"+sort%3Areactions-%2B1-desc+) issues.
-- Submit Github issues for any [feature request and enhancement](https://github.com/lukasmasuch/streamlit-pydantic/issues/new?assignees=&labels=feature&template=02_feature-request.md&title=), [bugs](https://github.com/lukasmasuch/streamlit-pydantic/issues/new?assignees=&labels=bug&template=01_bug-report.md&title=), or [documentation](https://github.com/lukasmasuch/streamlit-pydantic/issues/new?assignees=&labels=documentation&template=03_documentation.md&title=) problems.
-- By participating in this project, you agree to abide by its [Code of Conduct](https://github.com/lukasmasuch/streamlit-pydantic/blob/main/.github/CODE_OF_CONDUCT.md).
+- Pull requests are encouraged and always welcome. Read our [contribution guidelines](https://github.com/lukasmasuch/st-pydantic/tree/main/CONTRIBUTING.md) and check out [help-wanted](https://github.com/lukasmasuch/st-pydantic/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A"help+wanted"+sort%3Areactions-%2B1-desc+) issues.
+- Submit Github issues for any [feature request and enhancement](https://github.com/lukasmasuch/st-pydantic/issues/new?assignees=&labels=feature&template=02_feature-request.md&title=), [bugs](https://github.com/lukasmasuch/st-pydantic/issues/new?assignees=&labels=bug&template=01_bug-report.md&title=), or [documentation](https://github.com/lukasmasuch/st-pydantic/issues/new?assignees=&labels=documentation&template=03_documentation.md&title=) problems.
+- By participating in this project, you agree to abide by its [Code of Conduct](https://github.com/lukasmasuch/st-pydantic/blob/main/.github/CODE_OF_CONDUCT.md).
 - The [development section](#development) below contains information on how to build and test the project after you have implemented some changes.
 
 ## Development

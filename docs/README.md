@@ -4,21 +4,21 @@
 
 ## Modules
 
-- [`streamlit_pydantic.settings`](./streamlit_pydantic.settings.md#module-streamlit_pydanticsettings)
-- [`streamlit_pydantic.types`](./streamlit_pydantic.types.md#module-streamlit_pydantictypes)
-- [`streamlit_pydantic.ui_renderer`](./streamlit_pydantic.ui_renderer.md#module-streamlit_pydanticui_renderer)
+- [`st_pydantic.settings`](./st_pydantic.settings.md#module-st_pydanticsettings)
+- [`st_pydantic.types`](./st_pydantic.types.md#module-st_pydantictypes)
+- [`st_pydantic.ui_renderer`](./st_pydantic.ui_renderer.md#module-st_pydanticui_renderer)
 
 ## Classes
 
-- [`settings.StreamlitSettings`](./streamlit_pydantic.settings.md#class-streamlitsettings)
-- [`types.FileContent`](./streamlit_pydantic.types.md#class-filecontent)
-- [`ui_renderer.GroupOptionalFieldsStrategy`](./streamlit_pydantic.ui_renderer.md#class-groupoptionalfieldsstrategy): An enumeration.
+- [`settings.StreamlitSettings`](./st_pydantic.settings.md#class-streamlitsettings)
+- [`types.FileContent`](./st_pydantic.types.md#class-filecontent)
+- [`ui_renderer.GroupOptionalFieldsStrategy`](./st_pydantic.ui_renderer.md#class-groupoptionalfieldsstrategy): An enumeration.
 
 ## Functions
 
-- [`ui_renderer.pydantic_form`](./streamlit_pydantic.ui_renderer.md#function-pydantic_form): Auto-generates a Streamlit form based on the given (Pydantic-based) input class.
-- [`ui_renderer.pydantic_input`](./streamlit_pydantic.ui_renderer.md#function-pydantic_input): Auto-generates input UI elements for a selected Pydantic class.
-- [`ui_renderer.pydantic_output`](./streamlit_pydantic.ui_renderer.md#function-pydantic_output): Auto-generates output UI elements for all properties of a (Pydantic-based) model instance.
+- [`ui_renderer.pydantic_form`](./st_pydantic.ui_renderer.md#function-pydantic_form): Auto-generates a Streamlit form based on the given (Pydantic-based) input class.
+- [`ui_renderer.pydantic_input`](./st_pydantic.ui_renderer.md#function-pydantic_input): Auto-generates input UI elements for a selected Pydantic class.
+- [`ui_renderer.pydantic_output`](./st_pydantic.ui_renderer.md#function-pydantic_output): Auto-generates output UI elements for all properties of a (Pydantic-based) model instance.
 
 
 ---

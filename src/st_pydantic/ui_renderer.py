@@ -14,7 +14,7 @@ from pydantic import BaseModel, ValidationError, parse_obj_as
 from pydantic.color import Color
 from pydantic.json import pydantic_encoder
 
-from streamlit_pydantic import schema_utils
+from st_pydantic import schema_utils
 
 _OVERWRITE_STREAMLIT_KWARGS_PREFIX = "st_kwargs_"
 
@@ -228,7 +228,7 @@ class InputUI:
         streamlit_kwargs = {
             "label": label,
             "key": str(self._session_state.run_id) + "-" + str(self._key) + "-" + key,
-            "disabled": disabled
+            "disabled": disabled,
             # "on_change": detect_change, -> not supported for inside forms
             # "args": (key,),
         }

@@ -3,7 +3,7 @@ from typing import Optional
 import streamlit as st
 from pydantic import BaseModel, Field
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class ExampleModel(BaseModel):
