@@ -43,7 +43,7 @@ format:
 .PHONY: docs
 # Build the API documentation.
 docs:
-	pipenv run lazydocs --overview-file=README.md --src-base-url=https://github.com/lukasmasuch/streamlit-pydantic/blob/main streamlit_pydantic
+	pipenv run lazydocs --overview-file=README.md --src-base-url=https://github.com/lukasmasuch/st-pydantic/blob/main st_pydantic
 
 .PHONY: build
 # Build everything for release.

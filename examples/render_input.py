@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class ExampleModel(BaseModel):

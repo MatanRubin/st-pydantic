@@ -14,7 +14,7 @@ from pydantic import BaseModel, ValidationError, parse_obj_as
 from pydantic.color import Color
 from pydantic.json import pydantic_encoder
 
-from streamlit_pydantic import schema_utils
+from st_pydantic import schema_utils
 
 _OVERWRITE_STREAMLIT_KWARGS_PREFIX = "st_kwargs_"
 

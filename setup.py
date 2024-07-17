@@ -8,12 +8,12 @@ from os.path import basename, splitext
 from setuptools import find_packages, setup  # type: ignore
 
 # TODO: Update the package meta-data
-NAME = "streamlit-pydantic"
-MAIN_PACKAGE = "streamlit_pydantic"
+NAME = "st-pydantic"
+MAIN_PACKAGE = "st_pydantic"
 DESCRIPTION = "Auto-generate Streamlit UI from Pydantic Models & Dataclasses."
-URL = "https://github.com/lukasmasuch/streamlit-pydantic"
-EMAIL = "lukas.masuch@gmail.com"
-AUTHOR = "Lukas Masuch"
+URL = "https://github.com/MatanRubin/st-pydantic"
+EMAIL = "matanaloni@gmail.com"
+AUTHOR = "Matan Rubin"
 LICENSE = "MIT"
 REQUIRES_PYTHON = ">=3.7"
 VERSION = None  # Only set version if you like to overwrite the version in _about.py

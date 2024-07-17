@@ -6,8 +6,8 @@ import streamlit as st
 from pydantic import BaseModel, Field, SecretStr
 from pydantic.color import Color
 
-import streamlit_pydantic as sp
-from streamlit_pydantic.types import FileContent
+import st_pydantic as sp
+from st_pydantic.types import FileContent
 
 
 class SelectionValue(str, Enum):

@@ -4,7 +4,7 @@ import json
 import streamlit as st
 from pydantic.json import pydantic_encoder
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 @dataclasses.dataclass

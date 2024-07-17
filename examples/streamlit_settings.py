@@ -3,7 +3,7 @@ from typing import List
 import streamlit as st
 from pydantic import BaseModel, Field, SecretStr
 
-import streamlit_pydantic as sp
+import st_pydantic as sp
 
 
 class SubModel(BaseModel):
