@@ -24,6 +24,13 @@
   <a href="https://github.com/lukasmasuch/streamlit-pydantic/releases">Changelog</a>
 </p>
 
+st-pydantic is a fork of the fantastic [Streamlit-pydantic](https://github.com/LukasMasuch/streamlit-pydantic) package, 
+which is no longer maintained by the original author, @LukasMasuch.
+I tried reaching out to the original maintainer, but I did not get a response, so I created this fork.
+I intend on maintaining it and adding new features as needed.
+
+The original README is below.
+
 Streamlit-pydantic makes it easy to auto-generate UI elements from [Pydantic](https://github.com/samuelcolvin/pydantic/) models or [dataclasses](https://docs.python.org/3/library/dataclasses.html). Just define your data model and turn it into a full-fledged UI form. It supports data validation, nested models, and field limitations. Streamlit-pydantic can be easily integrated into any Streamlit app.
 
 <sup>Beta Version: Only suggested for experimental usage.</sup>
