@@ -2,7 +2,7 @@ from enum import Enum
 from typing import Set
 
 import streamlit as st
-from pydantic import BaseModel, Field, ValidationError, parse_obj_as
+from pydantic import BaseModel, Field
 
 import st_pydantic as sp
 
@@ -18,9 +18,7 @@ class SelectionValue(str, Enum):
 
 
 class ExampleModel(BaseModel):
-    long_text: str = Field(
-        ..., format="multi-line", description="Unlimited text property"
-    )
+    long_text: str = Field(..., format="multi-line", description="Unlimited text property")
     integer_in_range: int = Field(
         20,
         ge=10,
@@ -28,12 +26,8 @@ class ExampleModel(BaseModel):
         multiple_of=2,
         description="Number property with a limited range.",
     )
-    single_selection: SelectionValue = Field(
-        ..., description="Only select a single item from a set."
-    )
-    multi_selection: Set[SelectionValue] = Field(
-        ..., description="Allows multiple items from a set."
-    )
+    single_selection: SelectionValue = Field(..., description="Only select a single item from a set.")
+    multi_selection: Set[SelectionValue] = Field(..., description="Allows multiple items from a set.")
     read_only_text: str = Field(
         "Lorem ipsum dolor sit amet",
         description="This is a ready only text.",

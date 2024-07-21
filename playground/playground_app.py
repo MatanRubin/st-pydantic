@@ -15,8 +15,8 @@ BADGES = """
 st.markdown(BADGES, unsafe_allow_html=True)
 
 st.markdown(
-    "st-pydantic makes it easy to auto-generate UI elements from Pydantic models. Just define your data model and turn it into a full-fledged UI form. "
-    + " You can explore some examples below 👇"
+    "st-pydantic makes it easy to auto-generate UI elements from Pydantic models. Just define your data model and turn "
+    "it into a full-fledged UI form. You can explore some examples below 👇"
 )
 
 DEFAULT_DEMO = "simple_form.py"
@@ -45,9 +45,7 @@ for i, demo in enumerate(demos):
     title_to_demo[demo_title] = demo
     demo_titles.append(demo_title)
 
-selected_demo_title = st.selectbox(
-    "Select Demo", options=demo_titles, index=default_index
-)
+selected_demo_title = st.selectbox("Select Demo", options=demo_titles, index=default_index)
 selected_demo = title_to_demo[selected_demo_title]
 
 with st.expander("Source Code", expanded=False):

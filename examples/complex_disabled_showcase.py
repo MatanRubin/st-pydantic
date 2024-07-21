@@ -21,15 +21,9 @@ class OtherData(BaseModel):
 
 
 class DisabledModel(BaseModel):
-    short_text: str = Field(
-        ..., readOnly=True, max_length=60, description="Short text property"
-    )
-    password: SecretStr = Field(
-        ..., readOnly=True, description="Password text property"
-    )
-    long_text: str = Field(
-        ..., format="multi-line", readOnly=True, description="Unlimited text property"
-    )
+    short_text: str = Field(..., readOnly=True, max_length=60, description="Short text property")
+    password: SecretStr = Field(..., readOnly=True, description="Password text property")
+    long_text: str = Field(..., format="multi-line", readOnly=True, description="Unlimited text property")
     integer_in_range: int = Field(
         20,
         ge=10,
@@ -86,15 +80,11 @@ class DisabledModel(BaseModel):
         readOnly=True,
         description="A single file. Optional property.",
     )
-    single_selection: SelectionValue = Field(
-        ..., readOnly=True, description="Only select a single item from a set."
-    )
+    single_selection: SelectionValue = Field(..., readOnly=True, description="Only select a single item from a set.")
     single_selection_with_literal: Literal["foo", "bar"] = Field(
         "foo", readOnly=True, description="Only select a single item from a set."
     )
-    multi_selection: Set[SelectionValue] = Field(
-        ..., readOnly=True, description="Allows multiple items from a set."
-    )
+    multi_selection: Set[SelectionValue] = Field(..., readOnly=True, description="Allows multiple items from a set.")
     multi_selection_with_literal: Set[Literal["foo", "bar"]] = Field(
         ["foo", "bar"], readOnly=True, description="Allows multiple items from a set."
     )
@@ -103,16 +93,10 @@ class DisabledModel(BaseModel):
         readOnly=True,
         description="Another object embedded into this model.",
     )
-    string_list: List[str] = Field(
-        ..., max_items=20, readOnly=True, description="List of string values"
-    )
+    string_list: List[str] = Field(..., max_items=20, readOnly=True, description="List of string values")
     int_list: List[int] = Field(..., readOnly=True, description="List of int values")
-    string_dict: Dict[str, str] = Field(
-        ..., readOnly=True, description="Dict property with string values"
-    )
-    float_dict: Dict[str, float] = Field(
-        ..., readOnly=True, description="Dict property with float values"
-    )
+    string_dict: Dict[str, str] = Field(..., readOnly=True, description="Dict property with string values")
+    float_dict: Dict[str, float] = Field(..., readOnly=True, description="Dict property with float values")
     object_list: List[OtherData] = Field(
         ...,
         readOnly=True,

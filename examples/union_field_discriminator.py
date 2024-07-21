@@ -20,15 +20,11 @@ class EmailAddress(BaseModel):
 
 
 class ContactMethod(BaseModel):
-    contact: Optional[Union[PostalAddress, EmailAddress]] = Field(
-        ..., discriminator="contact_type"
-    )
+    contact: Optional[Union[PostalAddress, EmailAddress]] = Field(..., discriminator="contact_type")
     text: str
 
 
-from_model_tab, from_instance_tab = st.tabs(
-    ["Form inputs from model", "Form inputs from instance"]
-)
+from_model_tab, from_instance_tab = st.tabs(["Form inputs from model", "Form inputs from instance"])
 
 with from_model_tab:
     input_data = sp.pydantic_input(key="union_input", model=ContactMethod)
@@ -38,9 +34,7 @@ with from_model_tab:
 
 with from_instance_tab:
     instance = ContactMethod(
-        contact=EmailAddress(
-            contact_type="email", email="instance@example.com", send_news=True
-        ),
+        contact=EmailAddress(contact_type="email", email="instance@example.com", send_news=True),
         text="instance text",
     )
 

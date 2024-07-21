@@ -1,6 +1,6 @@
 import datetime
 from enum import Enum
-from typing import Dict, List, Literal, Optional, Set
+from typing import Dict, List, Set
 
 import streamlit as st
 from pydantic import BaseModel, Field
@@ -22,17 +22,13 @@ class SelectionValue(str, Enum):
 class ExampleModel(BaseModel):
     some_number: float = 10.0  # Optional
     some_text: str = Field(..., description="A text property")
-    some_text_with_an_alias: str = Field(
-        ..., description="A text property with an alias", alias="some_alias"
-    )
+    some_text_with_an_alias: str = Field(..., description="A text property with an alias", alias="some_alias")
     some_integer: int = Field(20, description="An integer property.")
     some_date: datetime.date = Field(..., description="A date.")
     some_time: datetime.time = Field(..., description="A time.")
     some_datetime: datetime.datetime = Field(..., description="A datetime.")
     some_boolean: bool = False  # Option
-    long_text: str = Field(
-        ..., format="multi-line", description="Unlimited text property"
-    )
+    long_text: str = Field(..., format="multi-line", description="Unlimited text property")
     integer_in_range: int = Field(
         20,
         ge=10,
@@ -41,12 +37,8 @@ class ExampleModel(BaseModel):
         description="Number property with a limited range.",
     )
     some_colour: Color
-    single_selection: SelectionValue = Field(
-        ..., description="Only select a single item from a set."
-    )
-    multi_selection: Set[SelectionValue] = Field(
-        ..., description="Allows multiple items from a set."
-    )
+    single_selection: SelectionValue = Field(..., description="Only select a single item from a set.")
+    multi_selection: Set[SelectionValue] = Field(..., description="Allows multiple items from a set.")
     disabled_selection: SelectionValue = Field(
         ..., readOnly=True, description="A read only field that is shown as disabled"
     )
@@ -132,9 +124,7 @@ instance = ExampleModel(
 )
 
 
-from_model_tab, from_instance_tab = st.tabs(
-    ["Form inputs from model", "Form inputs from instance"]
-)
+from_model_tab, from_instance_tab = st.tabs(["Form inputs from model", "Form inputs from instance"])
 
 with from_model_tab:
     data = sp.pydantic_input(key="my_input_model", model=ExampleModel)

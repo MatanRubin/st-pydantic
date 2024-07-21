@@ -23,9 +23,7 @@ class ExampleModel(BaseModel):
     A model to showcase and test different types of pydantic fields with default values"
     """
 
-    long_text: str = Field(
-        "default string", format="multi-line", description="Unlimited text property"
-    )
+    long_text: str = Field("default string", format="multi-line", description="Unlimited text property")
     integer_in_range: int = Field(
         22,
         ge=10,
@@ -33,12 +31,8 @@ class ExampleModel(BaseModel):
         multiple_of=2,
         description="Number property with a limited range",
     )
-    single_selection: SelectionValue = Field(
-        "bar", description="Only select a single item from a set."
-    )
-    multi_selection: Set[SelectionValue] = Field(
-        "bar", description="Allows multiple items from a set."
-    )
+    single_selection: SelectionValue = Field("bar", description="Only select a single item from a set.")
+    multi_selection: Set[SelectionValue] = Field("bar", description="Allows multiple items from a set.")
     read_only_text: str = Field(
         "Lorem ipsum dolor sit amet",
         description="This is ready only text.",

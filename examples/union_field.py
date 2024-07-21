@@ -22,9 +22,7 @@ class ContactMethod(BaseModel):
     text: str
 
 
-from_model_tab, from_instance_tab = st.tabs(
-    ["Form inputs from model", "Form inputs from instance"]
-)
+from_model_tab, from_instance_tab = st.tabs(["Form inputs from model", "Form inputs from instance"])
 
 with from_model_tab:
     input_data = sp.pydantic_input(key="union_input", model=ContactMethod)

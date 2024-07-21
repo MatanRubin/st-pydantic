@@ -1,5 +1,5 @@
 import streamlit as st
-from pydantic import BaseModel, HttpUrl, EmailStr
+from pydantic import BaseModel, EmailStr, HttpUrl
 from pydantic.color import Color
 
 import st_pydantic as sp

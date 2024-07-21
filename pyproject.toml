@@ -54,5 +54,3 @@ select = [
     "UP",  # pyupgrade
     "RUF",  # ruff-specific rules
 ]
-
-target-version = ['py36', 'py37', 'py38']
