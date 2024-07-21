@@ -11,10 +11,15 @@ jobs:
     runs-on: [ubuntu-latest]
     container:
       image: matanrubin/python-poetry:3.10-1.6.1
-
+    environment:
+      name: pypi
+      url: https://pypi.org/p/st-pydantic
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
     steps:
       - uses: actions/checkout@v4
       - run: make bootstrap
       - run: poetry update -vvv
       - run: poetry build -vvv
-      - run: poetry publish --username __token__ --password ${{ secrets.PYPI_TOKEN }}
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
