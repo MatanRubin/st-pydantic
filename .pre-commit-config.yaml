@@ -1,0 +1,48 @@
+# Pre-Commit is a tool that automatically runs hooks such as linters and auto-fixers
+# on you codebase before a commit is made.
+# This is a basic configuration that ensures that each commit is properly formatted (using Black),
+# does not have trailing whitespace, and passes Mypy and Flake8 checks.
+# You can add or remove hooks as you like.
+# See more details in https://pre-commit.com/
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-ast
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+        exclude: (.idea|docs)
+        args: [ --markdown-linebreak-ext=md ]
+      - id: end-of-file-fixer
+        exclude: (.idea|docs)
+      - id: check-docstring-first
+      - id: debug-statements
+      - id: detect-private-key
+      - id: name-tests-test
+        args: ["--pytest-test-first"]
+      - id: pretty-format-json
+        args: [ "--autofix", "--indent=4", "--no-sort-keys" ]
+  - repo: local
+    hooks:
+      - id: format
+        name: format
+        entry: make format
+        language: system
+        types: [ python ]
+        args: [ ]
+      - id: ruff-check
+        name: ruff-check
+        entry: make ruff
+        language: system
+        types: [ python ]
+        args: [ ]
+      - id: mypy
+        name: mypy
+        entry: make mypy
+        language: system
+        pass_filenames: false

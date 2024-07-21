@@ -1,29 +1,58 @@
-# Support for PEP 517
-# https://setuptools.readthedocs.io/en/latest/setuptools.html#setup-cfg-only-projects
+[tool.poetry]
+name = "st-pydantic"
+version = "0.1.0"
+description = "A package designed to include the core of Automation Infra simulators, to remove boilerplate from simulator projects and decouple the simulator's mechanics from its logic"
+authors = ["Matan Rubin <matan.rubin@solaredge.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "^1.14.0"
+pydantic = "^2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.2.1"
+pre-commit = "^3.6.1"
+coverage = "^7.4.1"
+mypy = "^1.8.0"
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+lazydocs = "^0.4.8"
+pydocstyle = "^6.3.0"
+
 [build-system]
-build-backend = "setuptools.build_meta"
-requires = [
-  "setuptools >= 40.9.0",
-  "wheel",
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+strict = true
+
+[tool.pytest.ini_options]
+markers = [
+    "cicd_pipeline_skip: marks tests to skip when running CI/CD pipeline (deselect with '-m \"not cicd_pipeline_skip\"')",
 ]
 
-[tool.black]
-exclude = '''
-(
-    \.egg
-  | \.eggs
-  | \.git
-  | \.hg
-  | \.mypy_cache
-  | \.pytest_cache
-  | \.tox
-  | \.nox
-  | \.venv
-  | _build
-  | build
-  | dist
-  | setup.py
-)
-'''
-line-length = 88
+[[tool.mypy.overrides]]
+module = ['pytest']
+ignore_missing_imports = true
+
+[tool.coverage.run]
+omit = ['.venv/*']
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+
+[tool.ruff.lint]
+# See all rules here: https://docs.astral.sh/ruff/rules/
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "RUF",  # ruff-specific rules
+]
+
 target-version = ['py36', 'py37', 'py38']
