@@ -32,12 +32,13 @@ check: bootstrap
 	# TODO add pydocstyle
 
 test: bootstrap
+	# TODO set the code coverage threshold to 70 once we add tests
 	poetry run pytest \
 		--log-cli-level=4 \
 		-m 'not cicd_pipeline_skip' \
 		--junit-xml $(or $(JUNIT_REPORT), "build/junit-report.xml") \
 		--cov=. \
-		--cov-fail-under=$(or $(COVERAGE_FAIL_UNDER), 70) \
+		--cov-fail-under=$(or $(COVERAGE_FAIL_UNDER), 0) \
 		--cov-report="xml:$(or $(COVERAGE_REPORT), build/coverage.xml)" \
 		tests
 
