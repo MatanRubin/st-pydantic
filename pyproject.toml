@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "st-pydantic"
-version = "0.1.0"
+version = "0.3.0"
 description = "Auto-generate Streamlit UI from Pydantic models and dataclasses."
 authors = [
     "Lukas Masuch <lukas.masuch@gmail.com>",
