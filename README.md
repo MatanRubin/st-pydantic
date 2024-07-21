@@ -24,7 +24,7 @@
   <a href="https://github.com/lukasmasuch/st-pydantic/releases">Changelog</a>
 </p>
 
-st-pydantic is a fork of the fantastic [st-pydantic](https://github.com/LukasMasuch/st-pydantic) package, 
+st-pydantic is a fork of the fantastic [st-pydantic](https://github.com/LukasMasuch/st-pydantic) package,
 which is no longer maintained by the original author, @LukasMasuch.
 I tried reaching out to the original maintainer, but I did not get a response, so I created this fork.
 I intend on maintaining it and adding new features as needed.
@@ -49,7 +49,7 @@ st-pydantic makes it easy to auto-generate UI elements from [Pydantic](https://g
 ## Highlights
 
 - 🪄&nbsp; Auto-generated UI elements from Pydantic models & Dataclasses.
-- 📇&nbsp; Out-of-the-box data validation. 
+- 📇&nbsp; Out-of-the-box data validation.
 - 📑&nbsp; Supports nested Pydantic models.
 - 📏&nbsp; Supports field limits and customizations.
 - 🎈&nbsp; Easy to integrate into any Streamlit app.
@@ -97,7 +97,7 @@ pip install st-pydantic
 
 ---
 
-The following collection of examples demonstrate how Streamlit Pydantic can be applied in more advanced scenarios. You can find additional - even more advanced - examples in the [examples folder](./examples) or in the [playground](https://share.streamlit.io/lukasmasuch/st-pydantic/main/playground/playground_app.py). 
+The following collection of examples demonstrate how Streamlit Pydantic can be applied in more advanced scenarios. You can find additional - even more advanced - examples in the [examples folder](./examples) or in the [playground](https://share.streamlit.io/lukasmasuch/st-pydantic/main/playground/playground_app.py).
 
 ### Simple Form
 
@@ -298,7 +298,7 @@ make install
 make check
 ```
 
-Run `make help` to see additional commands for development. 
+Run `make help` to see additional commands for development.
 
 ---
 
