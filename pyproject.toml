@@ -1,8 +1,43 @@
 [tool.poetry]
 name = "st-pydantic"
 version = "0.1.0"
-description = "A package designed to include the core of Automation Infra simulators, to remove boilerplate from simulator projects and decouple the simulator's mechanics from its logic"
-authors = ["Matan Rubin <matan.rubin@solaredge.com>"]
+description = "Auto-generate Streamlit UI from Pydantic models and dataclasses."
+authors = [
+    "Lukas Masuch <lukas.masuch@gmail.com>",
+    "Matan Rubin <matan.rubin@solaredge.com>",
+]
+maintainers = [
+    "Matan Rubin <matan.rubin@solaredge.com>",
+]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/MatanRubin/st-pydantic/"
+repository = "https://github.com/MatanRubin/st-pydantic"
+keywords = ["streamlit", "pydantic", "dataclasses", "ui", "forms", "validation", "schema"]
+
+# TODO: Update based on https://pypi.org/classifiers/
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Utilities",
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
